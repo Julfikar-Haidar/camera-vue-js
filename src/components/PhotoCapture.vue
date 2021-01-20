@@ -87,8 +87,7 @@ export default {
         return;
       }
       navigator.mediaDevices
-        .getUserMedia({ video: true ,
-        facingMode : this.useFrontCamera ? "user" : "environment"
+        .getUserMedia({ video: {facingMode : this.useFrontCamera ? "user" : "environment"}
 })
         .then(stream => (this.videoPlayer.srcObject = stream)).then(() => {
           this.isShow = true
